@@ -1,0 +1,14 @@
+<?php require('partials/head.php'); ?>
+
+	<?php require('partials/nav.php'); ?>
+
+	<?php require('partials/banner.php'); ?>
+
+	  <main>
+	    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+		  <a href="/notes" class="text-white bg-blue-500 bold rounded-sm px-5 py-3 hover:bg-blue-600">Back to all notes</a>
+		  <p class="mt-5"><?= $note['body']; ?></p>
+	    </div>
+	  </main>
+
+<?php require('partials/foot.php'); ?>

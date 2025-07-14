@@ -11,6 +11,7 @@
 		      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 		      <a href="/" class="<?= isUrl("/") ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
 		      <a href="/about" class="<?= isUrl("/about") ?> rounded-md px-3 py-2 text-sm font-medium">About</a>
+		      <a href="/notes" class="<?= isUrl("/notes") ?> rounded-md px-3 py-2 text-sm font-medium">Notes</a>
 		      <a href="/contact" class="<?= isUrl("/contact") ?> rounded-md px-3 py-2 text-sm font-medium">Contact</a>
 		    </div>
 		  </div>
