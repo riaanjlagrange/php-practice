@@ -15,3 +15,9 @@ function isUrl($value) {
 	echo "text-gray-300";
     }
 }
+
+function authorize($condition, $status = Response::FORBIDDEN) {
+    if (!$condition) {
+	abort($status);
+    }
+}
