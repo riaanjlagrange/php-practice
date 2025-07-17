@@ -17,7 +17,10 @@
                     rows="5"
                     class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-3 text-gray-800 resize-none"
                     placeholder="Write your thoughts here..."
-                ></textarea>
+		><?= $_POST['body'] ?? '' ?></textarea>
+		<?php if (isset($errors['body'])) : ?>
+		    <p class="mt-2 text-sm text-red-500 italic"><?= $errors['body'] ?></p>
+		<?php endif; ?>
             </div>
 
             <div>
