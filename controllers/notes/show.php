@@ -7,7 +7,7 @@ $username = 'root';
 $password = 'P@ssw0rd';
 $db = new Database($config['database'], $username, $password);
 
-$userId = 8;
+$userId = 3;
 
 $id = $_GET['id'];
 
