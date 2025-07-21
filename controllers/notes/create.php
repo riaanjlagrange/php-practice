@@ -1,13 +1,12 @@
 <?php
-$heading = "Create Note";
-
-$config = require("config.php");
+$config = require base_path("config.php");
 $username = 'root';
 $password = 'P@ssw0rd';
 $db = new Database($config['database'], $username, $password);
 
+$errors = [];
+
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-    $errors = [];
 
     $bodyLength = strlen($_POST['body']);
 
@@ -24,4 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     }
 }
 
-require "views/note-create.view.php";
+view("notes/create.view.php", [
+    "heading" => "Create a note",
+    "errors" => $errors,
+]);

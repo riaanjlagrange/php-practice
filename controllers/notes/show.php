@@ -1,11 +1,9 @@
 <?php
 
-$config = require("config.php");
+$config = require base_path("config.php");
 $username = 'root';
 $password = 'P@ssw0rd';
 $db = new Database($config['database'], $username, $password);
-
-$heading = "Note";
 
 $userId = 3;
 
@@ -15,4 +13,7 @@ $note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $id])->fetchOr
 
 authorize($note['user_id'] === $userId);
 
-require "views/note.view.php";
+view("notes/show.view.php", [
+    "heading" => "View note",
+    "note" => $note,
+]);
