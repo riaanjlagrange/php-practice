@@ -6,7 +6,7 @@
 
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <form method="POST" class="bg-white shadow-md rounded-lg p-6 space-y-4 max-w-xl mx-auto">
+        <form method="POST" action="/notes" class="bg-white shadow-md rounded-lg p-6 space-y-4 max-w-xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Create a New Post</h2>
 
             <div>

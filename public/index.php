@@ -9,25 +9,11 @@ spl_autoload_register(function ($class) {
     require base_path("$class.php");
 });
 
-require base_path("Core/router.php");
+$router = new \Core\Router;
+$routes = require base_path("routes.php");
+$uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
+$method = $_POST["_method"] ?? $_SERVER["REQUEST_METHOD"];
 
-/* $config = require('config.php'); */
-/**/
-/* $username = 'root'; */
-/* $password = 'P@ssw0rd'; */
-/**/
-/* $db = new Database($config['database'], $username, $password); */
-/**/
-/* $id = $_GET['id']; */
-/**/
-/* $query = "SELECT * FROM posts WHERE id = ?"; */
-/**/
-/* $posts = $db->query($query, [$id])->fetch(); */
-/**/
-/* dd($posts); */
-
-/* foreach ($posts as $post) { */
-/*     echo "<li>{$post["name"]}</li>"; */
-/* } */
+$router->route($uri, $method);
 
