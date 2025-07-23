@@ -1,11 +1,9 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
-$config = require base_path("config.php");
-$username = 'root';
-$password = 'P@ssw0rd';
-$db = new Database($config['database'], $username, $password);
+$db = App::resolve(Database::class);
 
 $userId = 3;
 $notes = $db->query("SELECT * FROM notes WHERE user_id = $userId")->fetchAll();
