@@ -7,7 +7,7 @@
 	  <main>
 	    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 		<p class="mb-10">404 - Page not found</p>
-		<a href="/" class="text-white bg-blue-500 px-4 py-2 hover:bg-blue-600">Go Home</a>
+		  <a href="/" class="w-200 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-1 px-2 rounded-md transition-colors duration-300">Back to home</a>
 	    </div>
 	  </main>
 

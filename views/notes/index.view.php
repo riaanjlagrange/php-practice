@@ -13,8 +13,11 @@
 		      </a>
 		      <?php endforeach; ?>
 		  </ul>
+		  <?php if (!count($notes)) : ?>
+		    <p class="italic text-gray-500 mb-5">You have no notes</p>
+		  <?php endif; ?>
 
-		  <a href="/notes/create" class="text-white bg-blue-500 px-2 py-1 hover:bg-blue-600 rounded-sm">Create note</a>
+		  <a href="/notes/create" class="w-200 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-1 px-2 rounded-md transition-colors duration-300">Create new note</a>
 	    </div>
 	  </main>
 

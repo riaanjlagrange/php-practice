@@ -8,22 +8,25 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-$bodyLength = strlen($_POST['body']);
+$id = $_POST['id'];
+$note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $id])->fetchOrAbort();
 
+$bodyLength = strlen($_POST['body']);
 if (!Validator::string($_POST['body'], 1, 500)) {
     $errors['body'] = "You have entered $bodyLength characters, but the limit is between 20 and 500 characters";
 }
 
-if (!empty($errors)) {
+if (count($errors)) {
      return view("notes/create.view.php", [
-	"heading" => "Create a note",
+	"heading" => "Edit note",
 	"errors" => $errors,
+	"note" => $note
     ]);
 }
 
-$db->query("INSERT INTO notes (body, user_id) VALUES (:body, :user_id)", [
+$db->query("UPDATE notes SET body = :body WHERE id = :id", [
     "body" => $_POST["body"],
-    "user_id" => 3
+    "id" => $note['id'],
 ]);
 
 header("location: /notes");
