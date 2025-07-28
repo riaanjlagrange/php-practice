@@ -16,6 +16,11 @@
 		    </div>
 		  </div>
 		</div>
+		      <?php if (isset($_SESSION['user'])) : ?>
+			  <span class="text-md text-white font-bold"><?= $_SESSION['user']['username'] ?>
+		      <?php else : ?>
+			<a href="/register" class="bg-red-500 px-2 py-1 text-white hover:bg-red-600 rounded-md">Register</a>
+		      <?php endif; ?>
 	      </div>
 	    </div>
 	  </nav>

@@ -10,7 +10,7 @@ $errors = [];
 
 $bodyLength = strlen($_POST['body']);
 
-if (!Validator::string($_POST['body'], 1, 500)) {
+if (!Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = "You have entered $bodyLength characters, but the limit is between 20 and 500 characters";
 }
 
