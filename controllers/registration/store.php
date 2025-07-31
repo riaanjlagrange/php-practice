@@ -54,7 +54,7 @@ if ($user) {
     $db->query("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)", [
 	"username" => $username,
 	"email" => $email,
-	"password" => $password
+	"password" => password_hash($password, PASSWORD_BCRYPT), //hash the password
     ]);
 
     // mark that the user has logged in
@@ -64,12 +64,7 @@ if ($user) {
 	'email' => $email,
     ];
     
-    header('location: /');
-    die();
 }
 
-
-
-header("location: /success");
-
+header('location: /');
 die();
