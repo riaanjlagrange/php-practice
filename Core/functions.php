@@ -42,23 +42,7 @@ function view($path, $attributes = []) {
     require base_path("views/" . $path);
 }
 
-function login($user) {
-    $_SESSION['user'] = [
-	"username" => $user['username'],
-	"email" => $user['email']
-    ];
-
-    // create new session id when user logs in
-    session_regenerate_id();
-}
-
-function logout() {
-    // clear out the session superglobal.
-    $_SESSION = [];
-    // destroy the session file
-    session_destroy();
-
-    // clear out the cookie
-    $params = session_get_cookie_params();
-    setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+function redirect($path) {
+    header("location: $path");
+    exit();
 }
