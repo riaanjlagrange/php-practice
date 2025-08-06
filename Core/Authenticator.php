@@ -39,13 +39,6 @@ class Authenticator {
     }
 
     public function logout() {
-	// clear out the session superglobal.
-	$_SESSION = [];
-	// destroy the session file
-	session_destroy();
-
-	// clear out the cookie
-	$params = session_get_cookie_params();
-	setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
-    }
+	Session::destroy();
+   }
 }
