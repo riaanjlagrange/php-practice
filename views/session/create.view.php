@@ -13,7 +13,7 @@
                     type="email" 
                     id="email" 
                     name="email"
-                    value="<?= $_POST['email'] ?? '' ?>"
+                    value="<?= old("email") ?>"
                     class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-3 text-gray-800"
                     placeholder="you@example.com"
 		    required
