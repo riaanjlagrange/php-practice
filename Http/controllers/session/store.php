@@ -14,12 +14,13 @@ $form = LoginForm::validate([
 // validate email and password
 // authenticate user
 $auth = new Authenticator();
-if ($auth->attempt($email, $password)) {
-    redirect("/");
+$signedIn = $auth->attempt($email, $password);
+if (!$signedIn) {
+    $form->error("password", "No matching account found for that email address and password.")->throw();
 }
 
-$form->error("password", "No matching account found for that email address and password.");
 
+return redirect('/');
 
 
 
