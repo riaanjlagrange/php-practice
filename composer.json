@@ -6,7 +6,9 @@
             "email": "riaanjlagrange@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^12.24"
+    },
     "autoload": {
 	"psr-4": {
 	    "Core\\": "Core/",
